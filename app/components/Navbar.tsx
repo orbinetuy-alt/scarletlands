@@ -12,7 +12,7 @@ export function Navbar() {
   return (
     <header className="site-header">
       <nav className="navbar" aria-label={t.navLabel}>
-        <a className="brand" href="#" aria-label="Scarlet Lands — Inicio">
+        <a className="brand" href="#inicio" aria-label="Scarlet Lands — Inicio">
           <span className="brand-mark">
             <Image
               src="/logosca-removebg-preview.png"

@@ -128,7 +128,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const saved = window.localStorage.getItem("scarlet-language");
-    if (saved === "es" || saved === "en") setLanguage(saved);
+    if (saved !== "es" && saved !== "en") return;
+
+    const frame = window.requestAnimationFrame(() => setLanguage(saved));
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   useEffect(() => {
@@ -145,4 +148,3 @@ export function useLanguage() {
   if (!context) throw new Error("useLanguage must be used inside LanguageProvider");
   return context;
 }
-

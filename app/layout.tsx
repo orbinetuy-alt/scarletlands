@@ -1,18 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "./site-config";
 import { LanguageProvider } from "./components/LanguageProvider";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -65,7 +54,13 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/logosca-removebg-preview.png", type: "image/png" }],
+    icon: [
+      {
+        url: "/logosca-removebg-preview.png",
+        type: "image/png",
+        sizes: "500x500",
+      },
+    ],
     shortcut: "/logosca-removebg-preview.png",
     apple: "/logosca-removebg-preview.png",
   },
@@ -112,9 +107,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

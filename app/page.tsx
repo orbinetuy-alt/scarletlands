@@ -13,7 +13,7 @@ export default function Home() {
     <main>
       <ScrollEffects />
       <Navbar />
-      <section className="hero" aria-labelledby="hero-title">
+      <section className="hero" id="inicio" aria-labelledby="hero-title">
         <div className="hero-inner">
           <div className="hero-watermark" aria-hidden="true" />
           <div className="hero-copy hero-enter">
@@ -167,7 +167,7 @@ export default function Home() {
       <footer className="footer">
         <div className="footer-inner">
           <div className="footer-primary">
-            <a className="footer-brand" href="#" aria-label="Scarlet Lands — Inicio">
+            <a className="footer-brand" href="#inicio" aria-label="Scarlet Lands — Inicio">
               Scarlet Lands <span>LLC</span>
             </a>
             <p>{t.slogan[0]}<br />{t.slogan[1]}</p>
@@ -205,7 +205,7 @@ export default function Home() {
               <span className={language === "es" ? "is-active" : ""}>ES</span> <i>/</i>{" "}
               <span className={language === "en" ? "is-active" : ""}>EN</span>
             </button>
-            <a href="#">{t.backToTop}</a>
+            <a href="#inicio">{t.backToTop}</a>
           </div>
         </div>
       </footer>
